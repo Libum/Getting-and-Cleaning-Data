@@ -1,0 +1,25 @@
+{
+    "contents" : "",
+    "created" : 1445615975914.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "C8993477",
+    "lastKnownWriteTime" : 32651569751457901,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "jwq1i6gn7j",
+        "caption" : "act_lab",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=act_lab&cache_key=jwq1i6gn7j",
+        "displayedObservations" : 6,
+        "environment" : "",
+        "object" : "act_lab",
+        "totalObservations" : 6,
+        "variables" : 2
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

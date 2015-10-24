@@ -1,0 +1,18 @@
+{
+    "contents" : "#Loading all core elements\ntrain = read.csv(\"train/X_train.txt\", header = FALSE)\ntest = read.csv(\"test/X_test.txt\", header = FALSE)\nsub_train = read.csv(\"train/subject_train.txt\", header = FALSE)\nsub_test = read.csv(\"test/subject_test.txt\", header = FALSE)\nact_lab = read.csv(\"activity_labels.txt\", header = FALSE, sep = \"\")\nfeatures = read.csv(\"features.txt\",header = FALSE, sep=\"\")\ntrain_act = read.csv(\"train/y_train.txt\", header = FALSE)\ntest_act = read.csv(\"test/y_test.txt\", header = FALSE)\n\n# Merging training and testing set\nsub = rbind(sub_train, sub_test)\ndata = rbind(train, test)\n\n#Merging activities from train and test set\nact = rbind(train_act,test_act)\n\n# Splitting vector into separate features and converting it into data frame\ndata$V1 = as.character(data$V1)\ndata$V1 = gsub(\"  \", \" \", data$V1)\ndata = apply(data, 1, strsplit, \" \", TRUE)\ndata = as.matrix(data)\ndata = t(data)\ndata = as.data.frame(data)\ndata = data[,seq(2,ncol(data), 1)]\n\n#Giving names to features\nnames(data) = features[,2]\n\n#Merging feature mesurements, subjects ids and activities\ndata = cbind(data, sub, act)\nnames(data)[562]=c(\"Subject\")\nnames(data)[563]=c(\"Activity\")\n",
+    "created" : 1445546149490.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "577455941",
+    "id" : "2D2CB3F",
+    "lastKnownWriteTime" : 1445615856,
+    "path" : "~/GitHub/Getting-and-Cleaning-Data/run_analysis.R",
+    "project_path" : "run_analysis.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
